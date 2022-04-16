@@ -5,6 +5,8 @@
 
 class DemoController : public Controller
 {
+private:
+    std::string Prefix = "/api/test_1";
 public:
     DemoController();
 

@@ -2,6 +2,8 @@
 #define CONTROLLER_HPP
 
 #include "httplib.hpp"
+#include "src/utils/util.hpp"
+#include "json/json.h"
 #include <spdlog/spdlog.h>
 
 class Controller {

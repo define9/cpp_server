@@ -27,7 +27,8 @@ SOURCES += \
     src/Server/servermanager.cpp \
     src/controller/democontroller.cpp \
     src/controller/admincontroller.cpp \
-    src/utils/util.cpp
+    src/utils/util.cpp \
+    src/utils/jsoncpp.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
