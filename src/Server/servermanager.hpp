@@ -6,6 +6,7 @@
 #include <thread>
 #include "src/controller/controller.hpp"
 #include "src/controller/democontroller.hpp"
+#include "src/controller/admincontroller.hpp"
 
 #include <vector>
 
@@ -34,6 +35,11 @@ public:
     int Start(int port = 80, const std::string &staticPath = "www");
 
     void Stop();
+
+    /**
+     * @brief Exec 服务器堵塞函数
+     */
+    void Exec();
 };
 
 #endif // SERVERMANAGER_HPP

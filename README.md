@@ -18,6 +18,7 @@ public:
 
     void Route(std::shared_ptr<httplib::Server>) override;
 
+    // Demo方法为所映射函数， 确保为static
     void static Demo(const httplib::Request &req, httplib::Response &res);
 };
 
@@ -39,3 +40,9 @@ void ServerManager::ScanController()
 }
 ```
 
+#### terminal 显示微软表情乱码
+```bash
+# 请检查您的文件编码和控制台编码是否一致，中文版windows默认为GBK,
+# 在此处提供改变terminal编码为utf-8, terminal 运行以下命令
+chcp 65001
+```

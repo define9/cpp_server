@@ -14,6 +14,9 @@ INCLUDEPATH += $$PWD/_include
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+#DEFINES += NOCONSOLE=0
+DEFINES += SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_DEBUG
+
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -22,7 +25,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         src/main.cpp \
     src/Server/servermanager.cpp \
-    src/controller/democontroller.cpp
+    src/controller/democontroller.cpp \
+    src/controller/admincontroller.cpp \
+    src/utils/util.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,4 +37,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     src/Server/servermanager.hpp \
     src/controller/democontroller.hpp \
-    src/controller/controller.hpp
+    src/controller/controller.hpp \
+    src/controller/admincontroller.hpp \
+    src/utils/util.hpp
