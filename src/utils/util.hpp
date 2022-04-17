@@ -1,7 +1,10 @@
 #ifndef UTIL_HPP
 #define UTIL_HPP
 
+#include <stdarg.h>
 #include <string>
+#include <vector>
+
 #include <QString>
 
 namespace DataFormat {

@@ -5,6 +5,7 @@ CONFIG += console
 CONFIG -= app_bundle
 
 LIBS += -lpthread libwsock32 libws2_32
+LIBS += $$PWD/_libs/visa64.lib
 INCLUDEPATH += $$PWD/_include
 
 
@@ -24,11 +25,12 @@ DEFINES += SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_DEBUG
 
 SOURCES += \
         src/main.cpp \
-    src/Server/servermanager.cpp \
+    src/server/servermanager.cpp \
     src/controller/democontroller.cpp \
     src/controller/admincontroller.cpp \
     src/utils/util.cpp \
-    src/utils/jsoncpp.cpp
+    src/utils/jsoncpp.cpp \
+    src/device/b2900.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -36,8 +38,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    src/Server/servermanager.hpp \
+    src/server/servermanager.hpp \
     src/controller/democontroller.hpp \
     src/controller/controller.hpp \
     src/controller/admincontroller.hpp \
-    src/utils/util.hpp
+    src/utils/util.hpp \
+    src/device/device.hpp \
+    src/device/b2900.hpp
